@@ -1,47 +1,37 @@
 export function showMap(root, center, zoom, cb) {
   ymaps.ready(function() {
     // Создание карты.
-    var map = new ymaps.Map("map", {
+    var map = new ymaps.Map(root, {
       // Координаты центра карты.
       // Порядок по умолчанию: «широта, долгота».
       // Чтобы не определять координаты центра карты вручную,
       // воспользуйтесь инструментом Определение координат.
-      center: [55.76, 37.64],
+      center: center,
       // Уровень масштабирования. Допустимые значения:
       // от 0 (весь мир) до 19.
-      zoom: 8
+      zoom: zoom
     });
 
     if (cb) {
       cb(map);
     }
-    //var points = [[55.8, 37.5], [55.8, 37.4], [55.7, 37.5], [55.7, 37.4]];
   });
 }
 
 export function showPoints(map, points) {
   ymaps.ready(function() {
     var collection = new ymaps.GeoObjectCollection(null, {
-      // Опции.
       // Иконка метки будет растягиваться под размер ее содержимого.
       preset: "islands#blackStretchyIcon",
-      // Задаем опции геообъекта.
       // Цвет с прозрачностью.
       strokeColor: "#00000088",
       // Ширину линии.
       strokeWidth: 4,
-      // Максимально допустимое количество вершин в ломаной.
-      editorMaxPoints: 6
     });
 
     var onDrag = function(i) {
       return function(e) {
-        window.console.log(
-          "@" + e.get("type"),
-          e.originalEvent.target.geometry._coordinates
-        );
         points[i].geometry = e.originalEvent.target.geometry._coordinates;
-        map.geoObjects.remove(collection);
         showPoints(map, points);
       };
     };
@@ -78,6 +68,7 @@ export function showPoints(map, points) {
       }
     }
 
+    map.geoObjects.removeAll();
     map.geoObjects.add(collection);
   });
 }

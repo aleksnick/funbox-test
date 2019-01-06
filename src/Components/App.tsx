@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar";
 import IStore from "../Models/IStore";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Map from "./Map";
+import { MapOptions } from "../Models/MapOptions";
 
 export interface AppProps {}
 
@@ -36,7 +37,11 @@ export class App extends React.Component<AppContext> {
       <React.Fragment>
         <CssBaseline />
         <Layout sidebar={<Sidebar />}>
-          <Map points={points} />
+          <Map
+            center={MapOptions.center}
+            zoom={MapOptions.zoom}
+            points={points}
+          />
         </Layout>
       </React.Fragment>
     );

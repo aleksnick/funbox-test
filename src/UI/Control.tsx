@@ -7,11 +7,6 @@ import IconButton from "./IconButton";
 import { ButtonColor } from "./Button";
 import { withStyles } from "@material-ui/core";
 
-export interface ControlProps extends IWithStyles {
-  placeholder: string;
-  onChange?: (value: string) => void;
-}
-
 const styles = {
   root: {
     padding: "2px 4px",
@@ -33,6 +28,15 @@ const styles = {
   }
 };
 
+export interface ControlProps extends IWithStyles {
+  placeholder: string;
+  onSubmit?: (value: string) => void;
+}
+
+export interface ControlState {
+  value: string;
+}
+
 /**
  * Badge
  *
@@ -40,19 +44,22 @@ const styles = {
  * @class Control
  * @extends {React.Component<ControlProps>}
  */
-export class Control extends React.Component<ControlProps> {
+export class Control extends React.Component<ControlProps, ControlState> {
   constructor(props: ControlProps) {
     super(props);
+    this.state = {
+      value: ""
+    };
   }
 
   render() {
     const { classes, placeholder, children } = this.props;
     return (
       <Paper className={classes["root"]} elevation={1}>
-        <InputBase className={classes["input"]} placeholder={placeholder} />
+        <InputBase onChange={this.onChange} className={classes["input"]} placeholder={placeholder} value={this.state.value} />
         <Divider className={classes["divider"]} />
         <IconButton
-          onClick={this.onChange}
+          onClick={this.onSubmit}
           color={ButtonColor.Primary}
           className={classes["iconButton"]}
           aria-label="Directions"
@@ -63,7 +70,21 @@ export class Control extends React.Component<ControlProps> {
     );
   }
 
-  onChange = () => {};
+  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      value: e.currentTarget.value
+    });
+  };
+
+  onSubmit = () => {
+    const onSubmit = this.props.onSubmit;
+    if (onSubmit) {
+      this.setState({
+        value: ""
+      });
+      onSubmit(this.state.value);
+    }
+  }
 }
 
 export default withStyles(styles)(Control);

@@ -4,6 +4,7 @@ import IWithStyles from "../Models/IWithStyles";
 import { withStyles } from "@material-ui/core/styles";
 import { Points } from "../Models/IPoint";
 import IMap from "../Models/IMap";
+import { Geometry } from '../Models/Geometry';
 
 const styles = {
   map: {
@@ -12,10 +13,10 @@ const styles = {
   }
 };
 
-const zoom = 8;
-const center = [55.76, 37.64];
 
 export interface MapProps extends IWithStyles {
+  center: Geometry
+  zoom: number;
   points: Points;
 }
 
@@ -35,6 +36,7 @@ export class Map extends React.Component<MapProps> {
   }
 
   componentDidMount() {
+    const { center, zoom } = this.props;
     showMap(this.root, center, zoom, map => {
       this.map = map;
       this.renderPoints();

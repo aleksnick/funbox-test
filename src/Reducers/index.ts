@@ -16,6 +16,11 @@ export default function reducer(state: IStore, action: Actions) {
         ...state,
         points: action.points
       };
+    case "ADD_POINT":
+      return {
+        ...state,
+        points: state.points.concat(action.point)
+      };
     default:
       return state;
   }
