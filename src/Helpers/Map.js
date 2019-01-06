@@ -18,7 +18,7 @@ export function showMap(root, center, zoom, cb) {
   });
 }
 
-export function showPoints(map, points) {
+export function showPoints(map, points, onDragPoint) {
   ymaps.ready(function() {
     var collection = new ymaps.GeoObjectCollection(null, {
       // Иконка метки будет растягиваться под размер ее содержимого.
@@ -31,8 +31,11 @@ export function showPoints(map, points) {
 
     var onDrag = function(i) {
       return function(e) {
-        points[i].geometry = e.originalEvent.target.geometry._coordinates;
-        showPoints(map, points);
+        if (onDragPoint) {
+          onDragPoint(i, e.originalEvent.target.geometry._coordinates);
+        }
+        //points[i].geometry = e.originalEvent.target.geometry._coordinates;
+        //showPoints(map, points);
       };
     };
 
