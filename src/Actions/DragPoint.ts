@@ -1,17 +1,17 @@
 import IAction from "../Models/IAction";
-import { Location } from "../Models/Location";
+import { Geometry } from "../Models/Geometry";
 
 export interface IDragPoint extends IAction {
   type: "DRAG_POINT";
   pointIndex: number;
-  location: Location;
+  geometry: Geometry;
 }
 
 export const DragPoint = (
   pointIndex: number,
-  location: Location
+  geometry: Geometry
 ): IDragPoint => ({
   type: "DRAG_POINT",
   pointIndex: pointIndex,
-  location: location
+  geometry: geometry
 });

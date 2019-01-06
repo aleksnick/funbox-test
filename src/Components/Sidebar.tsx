@@ -1,6 +1,11 @@
 import React from "react";
 import SortedList from "../UI/SortedList";
 import Controls from "./Controls";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 export interface SidebarProps {}
 
@@ -19,12 +24,26 @@ export default class Sidebar extends React.Component<SidebarProps> {
   render() {
     return (
       <React.Fragment>
-        <Controls />
-        <SortedList>
-          <div key="1">Sidebar 1</div>
-          <div key="2">Sidebar 2</div>
-          <div key="3">Sidebar 3</div>
-        </SortedList>
+          <Controls />
+          <List>
+            <SortedList>
+              <Paper key="1">
+                <ListItem>
+                  <ListItemText primary="Starred 1" />
+                </ListItem>
+              </Paper>
+              <Paper key="2">
+                <ListItem>
+                  <ListItemText primary="Starred 2" />
+                </ListItem>
+              </Paper>
+              <Paper key="3">
+                <ListItem>
+                  <ListItemText primary="Starred 3" />
+                </ListItem>
+              </Paper>
+            </SortedList>
+          </List>
       </React.Fragment>
     );
   }

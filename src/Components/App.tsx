@@ -4,6 +4,7 @@ import Layout from "../UI/Layout";
 import Sidebar from "./Sidebar";
 import IStore from "../Models/IStore";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import Map from "./Map";
 
 export interface AppProps {}
 
@@ -30,10 +31,13 @@ export class App extends React.Component<AppContext> {
   }
 
   render() {
+    const { points } = this.props;
     return (
       <React.Fragment>
         <CssBaseline />
-        <Layout sidebar={<Sidebar />}>app</Layout>
+        <Layout sidebar={<Sidebar />}>
+          <Map points={points} />
+        </Layout>
       </React.Fragment>
     );
   }

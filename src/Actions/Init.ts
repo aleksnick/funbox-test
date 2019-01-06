@@ -17,5 +17,14 @@ export interface IInit extends IAction, IStore {
 
 export const Init = (): IInit => ({
   type: "INIT_APP",
-  points: new Array()
+  points: [
+    {
+      displayName: "1",
+      geometry: [55.8, 37.5]
+    },
+    {
+      displayName: "2",
+      geometry: [55.8, 37.4]
+    }
+  ]
 });

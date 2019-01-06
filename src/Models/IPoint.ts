@@ -1,4 +1,4 @@
-import { Location } from "./Location";
+import { Geometry } from "./Geometry";
 
 /**
  * Действие
@@ -8,7 +8,7 @@ import { Location } from "./Location";
  */
 export default interface IPoint {
   displayName: string;
-  location: Location;
+  geometry: Geometry;
 }
 
 export type Points = Array<IPoint>;
