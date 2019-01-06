@@ -1,0 +1,36 @@
+{
+  "name": "FunBox",
+  "description": "FunBox Test Work",
+  "version": "1.0.0",
+  "author": "aleksnick",
+  "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server --hot --open",
+    "build": "./node_modules/.bin/webpack --mode production",
+    "watch": "./node_modules/.bin/webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aleksnick/funbox-test.git"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.6.2",
+    "@material-ui/icons": "^3.0.1",
+    "@types/react-beautiful-dnd": "^10.0.0",
+    "react": "^16.6.2",
+    "react-beautiful-dnd": "^10.0.3",
+    "react-dom": "^16.6.2",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "webpack-bundle-analyzer": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.13",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-redux": "^6.0.11",
+    "ts-loader": "^5.3.1",
+    "typescript": "^3.2.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
