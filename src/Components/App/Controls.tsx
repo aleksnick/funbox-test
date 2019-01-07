@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import Control from "../UI/Control";
-import AddCircle from "../Icons/AddCircle";
-import { AddPoint } from "../../Actions/AddPoint";
+import AddCircleIcon from "../Icons/AddCircle";
+import { AddPoint } from "../../Actions";
 import { MapOptions } from "../../Models/MapOptions";
 
 export interface ControlsProps {}
@@ -31,7 +31,7 @@ export class Controls extends React.Component<ControlsContext> {
         onSubmit={this.onAddPoint}
         placeholder={"Добавить пункт на карту"}
       >
-        <AddCircle />
+        <AddCircleIcon />
       </Control>
     );
   }

@@ -7,6 +7,8 @@ import IconButton from "./IconButton";
 import { ButtonColor } from "./Button";
 import { withStyles } from "@material-ui/core";
 
+const enterButtonKey = 13;
+
 const styles = {
   root: {
     padding: "2px 4px",
@@ -58,6 +60,7 @@ export class Control extends React.Component<ControlProps, ControlState> {
       <Paper className={classes["root"]} elevation={1}>
         <InputBase
           onChange={this.onChange}
+          onKeyDown={this.onKeyPress}
           className={classes["input"]}
           placeholder={placeholder}
           value={this.state.value}
@@ -76,9 +79,19 @@ export class Control extends React.Component<ControlProps, ControlState> {
   }
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.currentTarget.value;
+    if (value === this.state.value) {
+      return;
+    }
     this.setState({
-      value: e.currentTarget.value
+      value: value
     });
+  };
+
+  onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.keyCode === enterButtonKey) {
+      this.onSubmit();
+    }
   };
 
   onSubmit = () => {

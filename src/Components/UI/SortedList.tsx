@@ -64,7 +64,6 @@ export default class SortedList extends React.Component<SortedListProps> {
   }
 
   onDragEnd = (result: DropResult) => {
-    window.console.log(result);
     if (!result || !result.destination) {
       return;
     }

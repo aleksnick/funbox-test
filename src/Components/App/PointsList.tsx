@@ -1,14 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
-import { SortPoints } from "../../Actions/SortPoints";
+import { withStyles } from "@material-ui/core";
+import { SortPoints } from "../../Actions";
 import IStore from "../../Models/IStore";
 import SortedList from "../UI/SortedList";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import Paper from "@material-ui/core/Paper";
+import List from "../UI/List";
+import ListItem from "../UI/ListItem";
+import DeleteIcon from "../Icons/Delete";
+import IWithStyles from "../../Models/IWithStyles";
+import { ButtonColor } from "../UI/Button";
+import IconButton from "../UI/IconButton";
 
-export interface PointsListProps {}
+const styles = {
+  item: {
+    marginBottom: 2
+  },
+  iconButton: {
+    padding: 10
+  }
+};
+
+export interface PointsListProps extends IWithStyles {}
 
 export type PointsListInputs = PointsListProps & IStore;
 
@@ -45,20 +57,38 @@ export class PointsList extends React.Component<PointsListContext> {
   }
 
   renderPoints = () => {
-    const points = this.props.points;
+    const { points, classes } = this.props;
+    const deleteButton = (
+      <IconButton
+        onClick={this.onDelete}
+        color={ButtonColor.Secondary}
+        className={classes["iconButton"]}
+        aria-label="Directions"
+      >
+        <DeleteIcon />
+      </IconButton>
+    );
     return points.map((point, i) => {
       return (
-        <Paper key={i}>
-          <ListItem>
-            <ListItemText primary={point.displayName} />
-          </ListItem>
-        </Paper>
+        <ListItem
+          className={classes["item"]}
+          key={i}
+          extraContent={deleteButton}
+        >
+          {point.displayName}
+        </ListItem>
       );
     });
   };
+
+  onDelete = () => {
+    console.log("delete");
+  };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PointsList);
+export default withStyles(styles)(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(PointsList)
+);
