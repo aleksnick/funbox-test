@@ -1,5 +1,5 @@
 import React from "react";
-import IWithStyles from "../Models/IWithStyles";
+import IWithStyles from "../../Models/IWithStyles";
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
@@ -56,7 +56,12 @@ export class Control extends React.Component<ControlProps, ControlState> {
     const { classes, placeholder, children } = this.props;
     return (
       <Paper className={classes["root"]} elevation={1}>
-        <InputBase onChange={this.onChange} className={classes["input"]} placeholder={placeholder} value={this.state.value} />
+        <InputBase
+          onChange={this.onChange}
+          className={classes["input"]}
+          placeholder={placeholder}
+          value={this.state.value}
+        />
         <Divider className={classes["divider"]} />
         <IconButton
           onClick={this.onSubmit}
@@ -77,6 +82,9 @@ export class Control extends React.Component<ControlProps, ControlState> {
   };
 
   onSubmit = () => {
+    if (this.state.value === "") {
+      return;
+    }
     const onSubmit = this.props.onSubmit;
     if (onSubmit) {
       this.setState({
@@ -84,7 +92,7 @@ export class Control extends React.Component<ControlProps, ControlState> {
       });
       onSubmit(this.state.value);
     }
-  }
+  };
 }
 
 export default withStyles(styles)(Control);

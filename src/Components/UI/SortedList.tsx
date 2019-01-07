@@ -8,7 +8,9 @@ import {
 
 export interface DraggableItemProps {}
 
-export interface SortedListProps {}
+export interface SortedListProps {
+  onSort?: (draggableId: number, destination: number) => void;
+}
 
 /**
  * Badge
@@ -63,5 +65,12 @@ export default class SortedList extends React.Component<SortedListProps> {
 
   onDragEnd = (result: DropResult) => {
     window.console.log(result);
+    if (!result || !result.destination) {
+      return;
+    }
+    const onSort = this.props.onSort;
+    if (onSort) {
+      onSort(parseInt(result.draggableId), result.destination.index);
+    }
   };
 }

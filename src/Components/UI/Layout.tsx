@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import IWithStyles from "../Models/IWithStyles";
+import IWithStyles from "../../Models/IWithStyles";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = {
@@ -29,7 +29,9 @@ export class Layout extends React.Component<LayoutProps> {
     const { sidebar, classes, children } = this.props;
     return (
       <Grid xs={12} container>
-        <Grid className={classes["column"]} item>{sidebar}</Grid>
+        <Grid className={classes["column"]} item>
+          {sidebar}
+        </Grid>
         <Grid className={classes["column"]} item xs>
           {children}
         </Grid>

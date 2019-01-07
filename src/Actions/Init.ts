@@ -1,6 +1,6 @@
 import IAction from "../Models/IAction";
 import IStore from "../Models/IStore";
-import { Points } from "../Models/IPoint";
+import IPoint, { Points } from "../Models/IPoint";
 
 /**
  * Инициализация приложения
@@ -17,14 +17,5 @@ export interface IInit extends IAction, IStore {
 
 export const Init = (): IInit => ({
   type: "INIT_APP",
-  points: [
-    {
-      displayName: "1",
-      geometry: [55.8, 37.5]
-    },
-    {
-      displayName: "2",
-      geometry: [55.8, 37.4]
-    }
-  ]
+  points: new Array<IPoint>()
 });

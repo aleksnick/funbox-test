@@ -1,10 +1,5 @@
 import React from "react";
-import SortedList from "../UI/SortedList";
 import Controls from "./Controls";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import Paper from "@material-ui/core/Paper";
 import PointsList from "./PointsList";
 
 export interface SidebarProps {}

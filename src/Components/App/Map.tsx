@@ -1,10 +1,10 @@
 import React from "react";
-import { showMap, showPoints } from "../Helpers/Map";
-import IWithStyles from "../Models/IWithStyles";
+import { showMap, showPoints } from "../../Helpers/Map";
+import IWithStyles from "../../Models/IWithStyles";
 import { withStyles } from "@material-ui/core/styles";
-import { Points } from "../Models/IPoint";
-import IMap from "../Models/IMap";
-import { Geometry } from '../Models/Geometry';
+import { Points } from "../../Models/IPoint";
+import IMap from "../../Models/IMap";
+import { Geometry } from "../../Models/Geometry";
 
 const styles = {
   map: {
@@ -13,9 +13,8 @@ const styles = {
   }
 };
 
-
 export interface MapProps extends IWithStyles {
-  center: Geometry
+  center: Geometry;
   zoom: number;
   points: Points;
   onDragPoint?: (pointId: number, pointGeometry: Geometry) => void;
@@ -65,7 +64,7 @@ export class Map extends React.Component<MapProps> {
     if (onDragPoint) {
       onDragPoint(pointId, pointGeometry);
     }
-  }
+  };
 }
 
 export default withStyles(styles)(Map);

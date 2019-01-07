@@ -2,10 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import Layout from "../UI/Layout";
 import Sidebar from "./Sidebar";
-import IStore from "../Models/IStore";
+import IStore from "../../Models/IStore";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Map from "./Map";
-import { MapOptions } from "../Models/MapOptions";
+import { DragPoint } from "../../Actions/DragPoint";
+import { MapOptions } from "../../Models/MapOptions";
 
 export interface AppProps {}
 
@@ -15,7 +16,9 @@ const mapStateToProps = (state: IStore, props: AppProps) => ({
   points: state.points
 });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  dragPoint: DragPoint
+};
 
 export type AppContext = AppInputs & typeof mapDispatchToProps;
 
@@ -32,7 +35,7 @@ export class App extends React.Component<AppContext> {
   }
 
   render() {
-    const { points } = this.props;
+    const { points, dragPoint } = this.props;
     return (
       <React.Fragment>
         <CssBaseline />
@@ -41,6 +44,7 @@ export class App extends React.Component<AppContext> {
             center={MapOptions.center}
             zoom={MapOptions.zoom}
             points={points}
+            onDragPoint={dragPoint}
           />
         </Layout>
       </React.Fragment>

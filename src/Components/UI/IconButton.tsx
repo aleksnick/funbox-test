@@ -1,5 +1,5 @@
 import React from "react";
-import ICanStyled from "../Models/ICanStyled";
+import ICanStyled from "../../Models/ICanStyled";
 import { SimpleButtonProps, ButtonColor } from "../UI/Button";
 import UIIconButton from "@material-ui/core/IconButton";
 

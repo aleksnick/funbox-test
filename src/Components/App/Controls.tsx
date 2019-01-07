@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import Control from "../UI/Control";
-import AddCircle from "@material-ui/icons/AddCircle";
-import { AddPoint } from "../Actions/AddPoint";
-import { MapOptions} from "../Models/MapOptions";
+import AddCircle from "../Icons/AddCircle";
+import { AddPoint } from "../../Actions/AddPoint";
+import { MapOptions } from "../../Models/MapOptions";
 
-export interface ControlsProps {
-}
+export interface ControlsProps {}
 
 const mapDispatchToProps = {
   addPoint: AddPoint
@@ -28,7 +27,10 @@ export class Controls extends React.Component<ControlsContext> {
 
   render() {
     return (
-      <Control onSubmit={this.onAddPoint} placeholder={"Добавить пункт на карту"}>
+      <Control
+        onSubmit={this.onAddPoint}
+        placeholder={"Добавить пункт на карту"}
+      >
         <AddCircle />
       </Control>
     );
@@ -42,7 +44,7 @@ export class Controls extends React.Component<ControlsContext> {
         geometry: MapOptions.center
       });
     }
-  }
+  };
 }
 
 export default connect(
