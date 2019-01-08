@@ -5,5 +5,5 @@
  * @interface ICanStyled
  */
 export default interface ICanStyled {
-  className: string;
+  className?: string;
 }

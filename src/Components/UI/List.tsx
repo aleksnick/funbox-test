@@ -1,7 +1,8 @@
 import React from "react";
 import UIList from "@material-ui/core/List";
+import ICanStyled from "../../Models/ICanStyled";
 
-export interface ListProps {}
+export interface ListProps extends ICanStyled {}
 
 /**
  * Кнопка с иконкой
@@ -16,6 +17,7 @@ export default class List extends React.Component<ListProps> {
   }
 
   render() {
-    return <UIList>{this.props.children}</UIList>;
+    const { className, children } = this.props;
+    return <UIList className={className}>{children}</UIList>;
   }
 }

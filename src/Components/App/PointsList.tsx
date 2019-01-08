@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withStyles } from "@material-ui/core";
-import { SortPoints } from "../../Actions";
+import { SortPoints, RemovePoint } from "../../Actions";
 import IStore from "../../Models/IStore";
 import SortedList from "../UI/SortedList";
 import List from "../UI/List";
@@ -10,6 +10,7 @@ import DeleteIcon from "../Icons/Delete";
 import IWithStyles from "../../Models/IWithStyles";
 import { ButtonColor } from "../UI/Button";
 import IconButton from "../UI/IconButton";
+import ICanStyled from "../../Models/ICanStyled";
 
 const styles = {
   item: {
@@ -20,7 +21,7 @@ const styles = {
   }
 };
 
-export interface PointsListProps extends IWithStyles {}
+export interface PointsListProps extends IWithStyles, ICanStyled {}
 
 export type PointsListInputs = PointsListProps & IStore;
 
@@ -29,7 +30,8 @@ const mapStateToProps = (state: IStore, props: PointsListProps) => ({
 });
 
 const mapDispatchToProps = {
-  sortPoints: SortPoints
+  sortPoints: SortPoints,
+  removePoint: RemovePoint
 };
 
 export type PointsListContext = PointsListInputs & typeof mapDispatchToProps;
@@ -47,20 +49,19 @@ export class PointsList extends React.Component<PointsListContext> {
   }
 
   render() {
+    const { className, sortPoints } = this.props;
     return (
-      <List>
-        <SortedList onSort={this.props.sortPoints}>
-          {this.renderPoints()}
-        </SortedList>
+      <List className={className}>
+        <SortedList onSort={sortPoints}>{this.renderPoints()}</SortedList>
       </List>
     );
   }
 
   renderPoints = () => {
-    const { points, classes } = this.props;
-    const deleteButton = (
+    const { points, classes, removePoint } = this.props;
+    const deleteButton = (pointIndex: number) => (
       <IconButton
-        onClick={this.onDelete}
+        onClick={() => removePoint(pointIndex)}
         color={ButtonColor.Secondary}
         className={classes["iconButton"]}
         aria-label="Directions"
@@ -71,18 +72,14 @@ export class PointsList extends React.Component<PointsListContext> {
     return points.map((point, i) => {
       return (
         <ListItem
-          className={classes["item"]}
           key={i}
-          extraContent={deleteButton}
+          className={classes["item"]}
+          extraContent={deleteButton(i)}
         >
           {point.displayName}
         </ListItem>
       );
     });
-  };
-
-  onDelete = () => {
-    console.log("delete");
   };
 }
 

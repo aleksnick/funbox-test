@@ -1,12 +1,11 @@
 import IAction from "../Models/IAction";
-import IPoint from "../Models/IPoint";
 
 export interface IRemovePoint extends IAction {
   type: "REMOVE_POINT";
-  point: IPoint;
+  pointIndex: number;
 }
 
-export const RemovePoint = (point: IPoint): IRemovePoint => ({
+export const RemovePoint = (pointIndex: number): IRemovePoint => ({
   type: "REMOVE_POINT",
-  point: point
+  pointIndex: pointIndex
 });

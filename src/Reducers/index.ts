@@ -1,7 +1,6 @@
 import { Actions } from "../Actions";
 import { ArrayHelper } from "../Helpers/Array";
 import IStore from "../Models/IStore";
-import { array } from "prop-types";
 
 /**
  * Reducer
@@ -43,6 +42,11 @@ export default function reducer(state: IStore, action: Actions) {
           action.dragIndex,
           action.dropIndex
         )
+      };
+    case "REMOVE_POINT":
+      return {
+        ...state,
+        points: ArrayHelper.Delete(state.points, action.pointIndex)
       };
     default:
       return state;

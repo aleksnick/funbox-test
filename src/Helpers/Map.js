@@ -1,3 +1,16 @@
+const colors = [
+  "islands#blueIcon",
+  "islands#redIcon",
+  "islands#darkOrangeIcon",
+  "islands#nightIcon",
+  "islands#darkBlueIcon",
+  "islands#pinkIcon",
+  "islands#grayIcon",
+  "islands#brownIcon",
+  "islands#darkGreenIcon",
+  "islands#violetIcon"
+];
+
 export function showMap(root, center, zoom, cb) {
   ymaps.ready(function() {
     // Создание карты.
@@ -20,22 +33,23 @@ export function showMap(root, center, zoom, cb) {
 
 export function showPoints(map, points, onDragPoint) {
   ymaps.ready(function() {
-    var collection = new ymaps.GeoObjectCollection(null, {
-      // Иконка метки будет растягиваться под размер ее содержимого.
-      preset: "islands#blackStretchyIcon",
+    var pointsCollection = new ymaps.GeoObjectCollection(null, {
+      // Метку можно перемещать.
+      draggable: true
+    });
+
+    var linesCollection = new ymaps.GeoObjectCollection(null, {
       // Цвет с прозрачностью.
       strokeColor: "#00000088",
       // Ширину линии.
-      strokeWidth: 4,
+      strokeWidth: 4
     });
 
-    var onDrag = function(i) {
+    var onDragEnd = function(i) {
       return function(e) {
         if (onDragPoint) {
           onDragPoint(i, e.originalEvent.target.geometry._coordinates);
         }
-        //points[i].geometry = e.originalEvent.target.geometry._coordinates;
-        //showPoints(map, points);
       };
     };
 
@@ -55,23 +69,26 @@ export function showPoints(map, points, onDragPoint) {
           }
         },
         {
-          // Метку можно перемещать.
-          draggable: true
+          preset: colors[i % colors.length]
         }
       );
 
-      point.events.add(["dragend"], onDrag(i));
-
-      collection.add(point);
-
-      if (i > 0) {
-        collection.add(
-          new ymaps.Polyline([points[i - 1].geometry, points[i].geometry])
-        );
-      }
+      point.events.add(["dragend"], onDragEnd(i));
+      pointsCollection.add(point);
     }
 
+    showLines(linesCollection, points);
+
     map.geoObjects.removeAll();
-    map.geoObjects.add(collection);
+    map.geoObjects.add(linesCollection);
+    map.geoObjects.add(pointsCollection);
   });
+}
+
+export function showLines(linesCollection, points) {
+  for (var i = 1; i < points.length; i++) {
+    linesCollection.add(
+      new ymaps.Polyline([points[i - 1].geometry, points[i].geometry])
+    );
+  }
 }

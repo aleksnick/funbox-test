@@ -55,7 +55,7 @@ export class Map extends React.Component<MapProps> {
 
   renderPoints = () => {
     if (this.map != null) {
-      showPoints(this.map, this.props.points, this.onDragPoint);
+      showPoints(this.map, this.props.points.slice(), this.onDragPoint);
     }
   };
 

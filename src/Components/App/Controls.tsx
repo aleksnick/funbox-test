@@ -4,8 +4,9 @@ import Control from "../UI/Control";
 import AddCircleIcon from "../Icons/AddCircle";
 import { AddPoint } from "../../Actions";
 import { MapOptions } from "../../Models/MapOptions";
+import ICanStyled from "../../Models/ICanStyled";
 
-export interface ControlsProps {}
+export interface ControlsProps extends ICanStyled {}
 
 const mapDispatchToProps = {
   addPoint: AddPoint
@@ -27,12 +28,14 @@ export class Controls extends React.Component<ControlsContext> {
 
   render() {
     return (
-      <Control
-        onSubmit={this.onAddPoint}
-        placeholder={"Добавить пункт на карту"}
-      >
-        <AddCircleIcon />
-      </Control>
+      <div className={this.props.className}>
+        <Control
+          onSubmit={this.onAddPoint}
+          placeholder={"Добавить пункт на карту"}
+        >
+          <AddCircleIcon />
+        </Control>
+      </div>
     );
   }
 

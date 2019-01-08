@@ -103,7 +103,7 @@ export class Control extends React.Component<ControlProps, ControlState> {
       this.setState({
         value: ""
       });
-      onSubmit(this.state.value);
+      onSubmit(this.state.value.trim());
     }
   };
 }
