@@ -1,7 +1,7 @@
 import { Geometry } from "./Geometry";
 
 /**
- * Действие
+ * Точка на карте
  *
  * @export
  * @interface IPoint

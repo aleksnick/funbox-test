@@ -1,4 +1,16 @@
 export class ArrayHelper {
+  /**
+   * Получить новый массив,
+   * при этом изменив порядковый номер определенного элемента
+   *
+   * @static
+   * @template T
+   * @param {Array<T>} arr
+   * @param {number} oldIndex
+   * @param {number} newIndex
+   * @returns {Array<T>}
+   * @memberof ArrayHelper
+   */
   static Move<T>(arr: Array<T>, oldIndex: number, newIndex: number): Array<T> {
     if (
       newIndex === oldIndex ||
@@ -27,6 +39,17 @@ export class ArrayHelper {
     return newArr;
   }
 
+  /**
+   * Получить новый массив,
+   * при этом удалив один элемент
+   *
+   * @static
+   * @template T
+   * @param {Array<T>} arr
+   * @param {number} index
+   * @returns {Array<T>}
+   * @memberof ArrayHelper
+   */
   static Delete<T>(arr: Array<T>, index: number): Array<T> {
     if (!this.CheckIndex(arr, index)) {
       return arr;
@@ -40,6 +63,16 @@ export class ArrayHelper {
     return newArr;
   }
 
+  /**
+   * Проверить что индекс существует внутри массива
+   *
+   * @static
+   * @template T
+   * @param {Array<T>} arr
+   * @param {number} index
+   * @returns {boolean}
+   * @memberof ArrayHelper
+   */
   static CheckIndex<T>(arr: Array<T>, index: number): boolean {
     return index >= 0 && index < arr.length;
   }

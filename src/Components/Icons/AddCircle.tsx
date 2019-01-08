@@ -4,7 +4,7 @@ import AddCircleIcon from "@material-ui/icons/AddCircle";
 export interface AddCircleProps {}
 
 /**
- * Кнопка с иконкой
+ * Иконка добавления
  *
  * @export
  * @class AddCircle

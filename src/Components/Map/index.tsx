@@ -21,11 +21,11 @@ export interface MapProps extends IWithStyles {
 }
 
 /**
- * Основной компонент приложения
+ * Компонент с картой
  *
  * @export
  * @class Map
- * @extends {React.Component<MapContext>}
+ * @extends {React.Component<MapProps>}
  */
 export class Map extends React.Component<MapProps> {
   private root = "map";

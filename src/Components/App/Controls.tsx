@@ -15,7 +15,7 @@ const mapDispatchToProps = {
 export type ControlsContext = ControlsProps & typeof mapDispatchToProps;
 
 /**
- * Основной компонент приложения
+ * Инпут с кнопкой для добавления точек на карту
  *
  * @export
  * @class Controls

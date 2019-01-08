@@ -14,7 +14,7 @@ export interface LayoutProps extends IWithStyles {
 }
 
 /**
- * Badge
+ * Layout
  *
  * @export
  * @class Layout

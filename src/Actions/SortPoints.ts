@@ -1,5 +1,12 @@
 import IAction from "../Models/IAction";
 
+/**
+ * Переместить точку внутри списка
+ *
+ * @export
+ * @interface ISortPoints
+ * @extends {IAction}
+ */
 export interface ISortPoints extends IAction {
   type: "SORT_POINTS";
   dragIndex: number;

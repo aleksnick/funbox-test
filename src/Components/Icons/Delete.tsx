@@ -4,7 +4,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 export interface DeleteProps {}
 
 /**
- * Кнопка с иконкой
+ * Иконка удаления
  *
  * @export
  * @class Delete

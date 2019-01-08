@@ -25,11 +25,11 @@ const styles = {
 export interface SidebarProps extends IWithStyles {}
 
 /**
- * Основной компонент приложения
+ * Левая панель
  *
  * @export
  * @class Sidebar
- * @extends {React.Component<SidebarContext>}
+ * @extends {React.Component<SidebarProps>}
  */
 export class Sidebar extends React.Component<SidebarProps> {
   constructor(props: SidebarProps) {

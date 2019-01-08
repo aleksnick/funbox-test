@@ -5,7 +5,7 @@ import ICanStyled from "../../Models/ICanStyled";
 export interface ListProps extends ICanStyled {}
 
 /**
- * Кнопка с иконкой
+ * Список
  *
  * @export
  * @class List

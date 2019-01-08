@@ -1,5 +1,5 @@
 /**
- * Типы размеров
+ * Css flex direction
  *
  * @export
  * @enum {number}

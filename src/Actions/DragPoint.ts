@@ -1,6 +1,13 @@
 import IAction from "../Models/IAction";
 import { Geometry } from "../Models/Geometry";
 
+/**
+ * Перемещение точки на карте
+ *
+ * @export
+ * @interface IDragPoint
+ * @extends {IAction}
+ */
 export interface IDragPoint extends IAction {
   type: "DRAG_POINT";
   pointIndex: number;

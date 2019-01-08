@@ -4,7 +4,7 @@ import Baseline from "@material-ui/core/CssBaseline";
 export interface CssBaselineProps {}
 
 /**
- * Кнопка с иконкой
+ * Базовые css стили
  *
  * @export
  * @class CssBaseline

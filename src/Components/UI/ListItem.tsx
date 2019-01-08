@@ -10,7 +10,7 @@ export interface ListProps extends ICanStyled {
 }
 
 /**
- * Кнопка с иконкой
+ * Элемент списка
  *
  * @export
  * @class List

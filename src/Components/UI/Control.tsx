@@ -40,7 +40,7 @@ export interface ControlState {
 }
 
 /**
- * Badge
+ * Инпут с кнопкой
  *
  * @export
  * @class Control

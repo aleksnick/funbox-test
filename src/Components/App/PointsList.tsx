@@ -37,7 +37,7 @@ const mapDispatchToProps = {
 export type PointsListContext = PointsListInputs & typeof mapDispatchToProps;
 
 /**
- * Основной компонент приложения
+ * Список точек на карте
  *
  * @export
  * @class PointsList

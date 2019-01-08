@@ -13,7 +13,7 @@ export interface SortedListProps {
 }
 
 /**
- * Badge
+ * Сортируемый список элементов
  *
  * @export
  * @class SortedList
