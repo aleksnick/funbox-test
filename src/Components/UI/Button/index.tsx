@@ -57,8 +57,10 @@ export default class Button extends React.Component<ButtonProps> {
   onClick = (e: React.ChangeEvent<{}>) => {
     const onClick = this.props.onClick;
     if (onClick) {
-      e.preventDefault();
-      e.stopPropagation();
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
       onClick();
     }
   };

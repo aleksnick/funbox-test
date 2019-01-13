@@ -1,23 +1,25 @@
 import React from "react";
-import Button from "../";
+import IconButton from "../";
 import { render, shallow } from "enzyme";
 
-describe("Button", () => {
+describe("IconButton", () => {
   describe("Snapshots", () => {
-    test("Simple Button snapshot", () => {
-      const wrapper = render(<Button>Button</Button>);
+    test("Simple IconButton snapshot", () => {
+      const wrapper = render(<IconButton>IconButton</IconButton>);
       expect(wrapper).toMatchSnapshot();
     });
   });
 
   describe("Check properties", () => {
-    test("Button OnClick", () => {
+    test("IconButton OnClick", () => {
       let changeValue = false;
       const onClick = () => {
         changeValue = true;
       };
 
-      const wrapper = shallow(<Button onClick={onClick}>Button</Button>);
+      const wrapper = shallow(
+        <IconButton onClick={onClick}>IconButton</IconButton>
+      );
       wrapper.simulate("click");
 
       expect(changeValue).toBe(true);

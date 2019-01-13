@@ -31,7 +31,7 @@ const styles = {
 };
 
 export interface ControlProps extends IWithStyles {
-  placeholder: string;
+  placeholder?: string;
   onSubmit?: (value: string) => void;
 }
 

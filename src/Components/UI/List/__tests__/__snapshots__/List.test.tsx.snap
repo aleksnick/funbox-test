@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Snapshots Simple List snapshot 1`] = `
+<ul
+  class="MuiList-root-1 MuiList-padding-2"
+>
+  <div
+    class="MuiPaper-root-5 MuiPaper-elevation2-9 MuiPaper-rounded-6"
+  >
+    <li
+      class="MuiListItem-container-33"
+    >
+      <div
+        class="MuiListItem-root-32 MuiListItem-default-35 MuiListItem-gutters-40 MuiListItem-secondaryAction-42"
+      >
+        <div
+          class="MuiListItemText-root-44"
+        >
+          <span
+            class="MuiTypography-root-50 MuiTypography-subheading-57 MuiListItemText-primary-47"
+          >
+            One
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiListItemSecondaryAction-root-86"
+      />
+    </li>
+  </div>
+  <div
+    class="MuiPaper-root-5 MuiPaper-elevation2-9 MuiPaper-rounded-6"
+  >
+    <li
+      class="MuiListItem-container-33"
+    >
+      <div
+        class="MuiListItem-root-32 MuiListItem-default-35 MuiListItem-gutters-40 MuiListItem-secondaryAction-42"
+      >
+        <div
+          class="MuiListItemText-root-44"
+        >
+          <span
+            class="MuiTypography-root-50 MuiTypography-subheading-57 MuiListItemText-primary-47"
+          >
+            Two
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiListItemSecondaryAction-root-86"
+      />
+    </li>
+  </div>
+  <div
+    class="MuiPaper-root-5 MuiPaper-elevation2-9 MuiPaper-rounded-6"
+  >
+    <li
+      class="MuiListItem-container-33"
+    >
+      <div
+        class="MuiListItem-root-32 MuiListItem-default-35 MuiListItem-gutters-40 MuiListItem-secondaryAction-42"
+      >
+        <div
+          class="MuiListItemText-root-44"
+        >
+          <span
+            class="MuiTypography-root-50 MuiTypography-subheading-57 MuiListItemText-primary-47"
+          >
+            Three
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiListItemSecondaryAction-root-86"
+      />
+    </li>
+  </div>
+</ul>
+`;

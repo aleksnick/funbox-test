@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Control Snapshots Simple Control snapshot 1`] = `
+<div
+  class="MuiPaper-root-5 MuiPaper-elevation1-8 MuiPaper-rounded-6 Control-root-1"
+>
+  <div
+    class="MuiInputBase-root-32 Control-input-2"
+  >
+    <input
+      class="MuiInputBase-input-42"
+      type="text"
+      value=""
+    />
+  </div>
+  <hr
+    class="MuiDivider-root-49 Control-divider-4"
+  />
+  <button
+    class="MuiButtonBase-root-60 MuiIconButton-root-54 MuiIconButton-colorPrimary-56 Control-iconButton-3"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiIconButton-label-59"
+    >
+      Control
+    </span>
+  </button>
+</div>
+`;

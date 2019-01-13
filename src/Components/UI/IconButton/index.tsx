@@ -35,8 +35,10 @@ export default class IconButton extends React.Component<IconButtonProps> {
   onClick = (e: React.ChangeEvent<{}>) => {
     const onClick = this.props.onClick;
     if (onClick) {
-      e.preventDefault();
-      e.stopPropagation();
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
       onClick();
     }
   };

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortedList Snapshots Simple SortedList snapshot 1`] = `
+<div>
+  <div
+    aria-roledescription="Draggable item. Press space bar to lift"
+    data-react-beautiful-dnd-drag-handle="0"
+    data-react-beautiful-dnd-draggable="0"
+    draggable="false"
+    tabindex="0"
+  >
+    <div
+      class="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2"
+    >
+      <li
+        class="MuiListItem-container-29"
+      >
+        <div
+          class="MuiListItem-root-28 MuiListItem-default-31 MuiListItem-gutters-36 MuiListItem-secondaryAction-38"
+        >
+          <div
+            class="MuiListItemText-root-40"
+          >
+            <span
+              class="MuiTypography-root-46 MuiTypography-subheading-53 MuiListItemText-primary-43"
+            >
+              One
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiListItemSecondaryAction-root-82"
+        />
+      </li>
+    </div>
+  </div>
+  <div
+    aria-roledescription="Draggable item. Press space bar to lift"
+    data-react-beautiful-dnd-drag-handle="0"
+    data-react-beautiful-dnd-draggable="0"
+    draggable="false"
+    tabindex="0"
+  >
+    <div
+      class="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2"
+    >
+      <li
+        class="MuiListItem-container-29"
+      >
+        <div
+          class="MuiListItem-root-28 MuiListItem-default-31 MuiListItem-gutters-36 MuiListItem-secondaryAction-38"
+        >
+          <div
+            class="MuiListItemText-root-40"
+          >
+            <span
+              class="MuiTypography-root-46 MuiTypography-subheading-53 MuiListItemText-primary-43"
+            >
+              Two
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiListItemSecondaryAction-root-82"
+        />
+      </li>
+    </div>
+  </div>
+  <div
+    aria-roledescription="Draggable item. Press space bar to lift"
+    data-react-beautiful-dnd-drag-handle="0"
+    data-react-beautiful-dnd-draggable="0"
+    draggable="false"
+    tabindex="0"
+  >
+    <div
+      class="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2"
+    >
+      <li
+        class="MuiListItem-container-29"
+      >
+        <div
+          class="MuiListItem-root-28 MuiListItem-default-31 MuiListItem-gutters-36 MuiListItem-secondaryAction-38"
+        >
+          <div
+            class="MuiListItemText-root-40"
+          >
+            <span
+              class="MuiTypography-root-46 MuiTypography-subheading-53 MuiListItemText-primary-43"
+            >
+              Three
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiListItemSecondaryAction-root-82"
+        />
+      </li>
+    </div>
+  </div>
+</div>
+`;

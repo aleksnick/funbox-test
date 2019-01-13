@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Snapshots Simple Layout snapshot 1`] = `
+<div
+  class="MuiGrid-container-2 MuiGrid-grid-xs-12-42"
+>
+  <div
+    class="MuiGrid-item-3 Layout-column-1"
+  >
+    <div>
+      sidebar
+    </div>
+  </div>
+  <div
+    class="MuiGrid-item-3 MuiGrid-grid-xs-true-30 Layout-column-1"
+  >
+    Layout
+  </div>
+</div>
+`;
