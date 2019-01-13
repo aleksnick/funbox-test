@@ -1,10 +1,10 @@
 import React from "react";
-import IWithStyles from "../../Models/IWithStyles";
+import IWithStyles from "../../../Models/IWithStyles";
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
-import IconButton from "./IconButton";
-import { ButtonColor } from "./Button";
+import IconButton from "../IconButton";
+import { ButtonColor } from "../Button";
 import { withStyles } from "@material-ui/core";
 
 const enterButtonKey = 13;

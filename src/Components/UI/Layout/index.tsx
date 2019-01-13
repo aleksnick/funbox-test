@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import IWithStyles from "../../Models/IWithStyles";
+import IWithStyles from "../../../Models/IWithStyles";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = {

@@ -1,6 +1,6 @@
 import React from "react";
 import UIList from "@material-ui/core/List";
-import ICanStyled from "../../Models/ICanStyled";
+import ICanStyled from "../../../Models/ICanStyled";
 
 export interface ListProps extends ICanStyled {}
 
