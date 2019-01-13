@@ -13,6 +13,12 @@ The task is executed on technologies:
 
 [Task](materials/task.pdf)
 
+# Level 1: Theoretical part
+
+[Answer the questionTask](materials/level1.md)
+
+# Level 2: Application
+
 ## Install and run
 
 You need install:
