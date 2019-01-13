@@ -1,6 +1,6 @@
 import React from "react";
 import UIButton from "@material-ui/core/Button";
-import { Size } from "../../Models/Size";
+import { Size } from "../../../Models/Size";
 
 export interface SimpleButtonProps {
   color?: ButtonColor;

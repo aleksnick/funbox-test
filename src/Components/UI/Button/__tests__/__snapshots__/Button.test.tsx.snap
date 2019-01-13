@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Snapshots Simple Button snapshot 1`] = `
+<button
+  class="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-outlined-9 MuiButton-sizeSmall-24"
+  tabindex="0"
+  type="button"
+>
+  <span
+    class="MuiButton-label-2"
+  >
+    Button
+  </span>
+</button>
+`;
