@@ -15,7 +15,7 @@ The task is executed on technologies:
 
 # Level 1: Theoretical part
 
-[Answer the questionTask](materials/level1.md)
+[Answer the question](materials/level1.md)
 
 # Level 2: Application
 
