@@ -2,8 +2,16 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import IWithStyles from "../../../Models/IWithStyles";
 import { withStyles } from "@material-ui/core/styles";
+import { FlexWrap } from "../../../Models/FlexWrap";
 
 const styles = {
+  row: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    overflow: "hidden",
+    flexWrap: FlexWrap.NoWrap
+  },
   column: {
     paddingLeft: 4
   }
@@ -28,7 +36,7 @@ export class Layout extends React.Component<LayoutProps> {
   render() {
     const { sidebar, classes, children } = this.props;
     return (
-      <Grid xs={12} container>
+      <Grid xs={12} className={classes["row"]}>
         <Grid className={classes["column"]} item>
           {sidebar}
         </Grid>

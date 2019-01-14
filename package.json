@@ -7,7 +7,7 @@
     "start": "./node_modules/.bin/webpack-dev-server --hot --open",
     "build": "./node_modules/.bin/webpack --mode production",
     "watch": "./node_modules/.bin/webpack --mode development --watch",
-    "test": "jest --config ./tests/configs/config.unit.js"
+    "test": "./node_modules/.bin/jest --config ./tests/configs/config.unit.js"
   },
   "repository": {
     "type": "git",

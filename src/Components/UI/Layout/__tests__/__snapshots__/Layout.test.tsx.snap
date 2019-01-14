@@ -2,17 +2,17 @@
 
 exports[`Layout Snapshots Simple Layout snapshot 1`] = `
 <div
-  class="MuiGrid-container-2 MuiGrid-grid-xs-12-42"
+  class="MuiGrid-grid-xs-12-43 Layout-row-1"
 >
   <div
-    class="MuiGrid-item-3 Layout-column-1"
+    class="MuiGrid-item-4 Layout-column-2"
   >
     <div>
       sidebar
     </div>
   </div>
   <div
-    class="MuiGrid-item-3 MuiGrid-grid-xs-true-30 Layout-column-1"
+    class="MuiGrid-item-4 MuiGrid-grid-xs-true-31 Layout-column-2"
   >
     Layout
   </div>

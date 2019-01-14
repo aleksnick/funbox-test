@@ -1,19 +1,11 @@
 import React from "react";
 import { showMap, showPoints } from "../../Helpers/Map";
-import IWithStyles from "../../Models/IWithStyles";
-import { withStyles } from "@material-ui/core/styles";
 import { Points } from "../../Models/IPoint";
 import IMap from "../../Models/IMap";
 import { Geometry } from "../../Models/Geometry";
+import ICanStyled from "../../Models/ICanStyled";
 
-const styles = {
-  map: {
-    width: "100%",
-    height: "100vh"
-  }
-};
-
-export interface MapProps extends IWithStyles {
+export interface MapProps extends ICanStyled {
   center: Geometry;
   zoom: number;
   points: Points;
@@ -27,7 +19,7 @@ export interface MapProps extends IWithStyles {
  * @class Map
  * @extends {React.Component<MapProps>}
  */
-export class Map extends React.Component<MapProps> {
+export default class Map extends React.Component<MapProps> {
   private root = "map";
   private map: IMap;
 
@@ -44,11 +36,11 @@ export class Map extends React.Component<MapProps> {
   }
 
   render() {
-    const { classes } = this.props;
+    const { className } = this.props;
     this.renderPoints();
     return (
       <React.Fragment>
-        <div id={this.root} className={classes["map"]} />
+        <div id={this.root} className={className} />
       </React.Fragment>
     );
   }
@@ -66,5 +58,3 @@ export class Map extends React.Component<MapProps> {
     }
   };
 }
-
-export default withStyles(styles)(Map);

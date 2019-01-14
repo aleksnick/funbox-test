@@ -9,7 +9,7 @@ const styles = {
   sidebar: {
     display: "flex",
     flexDirection: FlexDirection.Column,
-    maxHeight: "100vh"
+    height: "100vh"
   },
   controls: {
     minHeight: 50
