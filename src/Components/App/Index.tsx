@@ -36,7 +36,7 @@ export type AppContext = AppInputs & typeof mapDispatchToProps;
 
 /**
  * Основной компонент приложения
- *
+ * edit
  * @export
  * @class App
  * @extends {React.Component<AppContext>}
