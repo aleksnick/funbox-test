@@ -1,6 +1,6 @@
 {
   "name": "funbox",
-  "description": "FunBox Test Work",
+  "description": "React/Redux app for FunBox Test Work",
   "version": "1.0.0",
   "author": "aleksnick",
   "scripts": {
